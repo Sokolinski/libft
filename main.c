@@ -1,21 +1,16 @@
-
 #include <stdio.h>
 #include <string.h>
-#include "ft_memmove.c"
-
-
+#include <bsd/string.h>
 
 int main()
 {
-    char str1[] = "Hello, world!";  
+    char str[4] = "000";
+    char str2[5] = "12345";
+	char *p1,p2;
+	p1 = &str;
+	p2 = &str2;
+    size_t i = strlcpy(p1,p2,2);
+    printf("%s",str);
 
-    puts("\nstr1 after memmove ");
-    memmove(str1 , str1 + 7, 6);
-    puts(str1);
-
-    char str2[] = "Hello, world!"; 
-    ft_memmove(str2 , str2 + 7, 6);
-    puts("\nstr2 after memmove ");
-    puts(str2);
     return 0;
 }

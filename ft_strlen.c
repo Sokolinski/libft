@@ -1,41 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msakalin <msakalin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/29 14:06:28 by msakalin          #+#    #+#             */
-/*   Updated: 2025/10/01 19:12:15 by msakalin         ###   ########.fr       */
+/*   Created: 2025/10/01 17:18:00 by msakalin          #+#    #+#             */
+/*   Updated: 2025/10/01 19:10:43 by msakalin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+size_t	ft_strlen(const char *c)
 {
 	size_t	i;
-	char	*to;
-	char	*from;
 
-	to = (char *) dest;
-	from = (char *) src;
 	i = 0;
-	if (to <= from)
+	while (c[i])
 	{
-		while (i < n)
-		{
-			to[i] = from[i];
-			i++;
-		}
+		i++;
 	}
-	else if (to > from)
-	{
-		while (n)
-		{
-			to[n] = from[n];
-			n--;
-		}
-	}
-	return (dest);
+	return (i);
 }

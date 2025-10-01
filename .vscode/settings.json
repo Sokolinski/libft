@@ -1,7 +1,8 @@
 {
     "files.associations": {
-        "stdio.h": "c",
-        "stddef.h": "c",
-        "string.h": "c"
-    }
+		"stdio.h": "c",
+		"stddef.h": "c",
+		"string.h": "c",
+		"types.h": "c"
+	}
 }

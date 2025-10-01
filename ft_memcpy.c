@@ -6,7 +6,7 @@
 /*   By: msakalin <msakalin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 13:37:43 by msakalin          #+#    #+#             */
-/*   Updated: 2025/09/29 16:53:00 by msakalin         ###   ########.fr       */
+/*   Updated: 2025/10/01 15:33:56 by msakalin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@ void *ft_memcpy(void *dest, const void *src, size_t n)
     from = (char *) src;
     i = 0;
 
-    while (i < n) 
+    while (i < n)
     {
         to[i] = from[i];
         i++;
     }
-    
+
     return (dest);
 }
