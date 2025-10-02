@@ -21,6 +21,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	to = (char *) dest;
 	from = (char *) src;
 	i = 0;
+	if(to == from || n == 0)
+		return (dest);
 	if (to <= from)
 	{
 		while (i < n)
@@ -33,7 +35,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	{
 		while (n)
 		{
-			to[n] = from[n];
+			to[n -1] = from[n - 1];
 			n--;
 		}
 	}
