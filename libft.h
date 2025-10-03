@@ -10,5 +10,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n);
 size_t	strlcat(char *dst, const char *src, size_t size);
 int	ft_toupper(int ch);
 int	ft_toupper(int ch);
+int	ft_strncmp(const char *s1, const char *s2, size_t n);
+
 
 #endif LIBTF_H
