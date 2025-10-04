@@ -1,33 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/04 16:16:06 by marvin            #+#    #+#             */
-/*   Updated: 2025/10/04 16:16:06 by marvin           ###   ########.fr       */
+/*   Created: 2025/10/04 17:06:12 by marvin            #+#    #+#             */
+/*   Updated: 2025/10/04 17:06:12 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *str, int c, size_t n)
-{
-	unsigned char	ch;
-	size_t	i;
-	unsigned char	*cstr;
-	void	*result;
-	i = 0;
-	cstr = (unsigned char *) str;
-	ch = (unsigned char) c;
-	result = (void *) str;
+#include <stdio.h>
+#include <string.h>
 
-	while (i < n)
+struct person
+{
+    char name[20];
+    int age;
+};
+
+int ft_memcmp( const void* p1, const void* p2, size_t n)
+{
+	size_t	i;
+	unsigned char	*cp1;
+	unsigned char	*cp2;
+
+	cp1 = (unsigned char *) p1;
+	cp2 = (unsigned char *) p2;
+
+	i = 0;
+	while (i < n )
 	{
-		if(ch == cstr[i])
-			return (result + i);
+		if (cp1[i] != cp2[i])
+			return (cp1[i] - cp2[i]);
+
 		i++;
 	}
-	return (NULL);
+	return (0);
 }

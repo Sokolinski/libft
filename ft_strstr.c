@@ -1,32 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/04 16:16:06 by marvin            #+#    #+#             */
-/*   Updated: 2025/10/04 16:16:06 by marvin           ###   ########.fr       */
+/*   Created: 2025/10/04 17:45:39 by marvin            #+#    #+#             */
+/*   Updated: 2025/10/04 17:45:39 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *str, int c, size_t n)
+char *strstr (const char *str_1, const char *str_2)
 {
-	unsigned char	ch;
 	size_t	i;
-	unsigned char	*cstr;
-	void	*result;
-	i = 0;
-	cstr = (unsigned char *) str;
-	ch = (unsigned char) c;
-	result = (void *) str;
+	size_t	ln_str2;
+	size_t	j;
 
-	while (i < n)
+	ln_str2 = ft_strlen(str_2);
+	i = 0;
+	j = 0;
+	if (ln_str2 == 0)
+		return (char *)str_1;
+	while (str_1[i])
 	{
-		if(ch == cstr[i])
-			return (result + i);
+		while (str_1[i + j]  == str_2[j] && str_1[i] && str_2[j])
+		{
+			j++;
+		}
+		if (j == ln_str2)
+			return(char *)str_1 + i - j;
+		j = 0;
 		i++;
 	}
 	return (NULL);
