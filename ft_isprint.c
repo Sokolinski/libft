@@ -6,16 +6,13 @@
 /*   By: msakalin <msakalin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/05 16:31:12 by msakalin          #+#    #+#             */
-/*   Updated: 2025/10/05 16:32:15 by msakalin         ###   ########.fr       */
+/*   Updated: 2025/10/05 19:35:51 by msakalin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isspint(int a)
+int	ft_isprint(int c)
 {
-	unsigned char	ch;
-
-	ch = (unsigned char) a;
-	if (ch > 0 && ch <= 127)
-		return (ch);
+	if (c >= 32 && c <= 126)
+		return (1);
 	return (0);
 }

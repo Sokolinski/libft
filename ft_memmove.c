@@ -6,7 +6,7 @@
 /*   By: msakalin <msakalin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 14:06:28 by msakalin          #+#    #+#             */
-/*   Updated: 2025/10/05 16:48:57 by msakalin         ###   ########.fr       */
+/*   Updated: 2025/10/05 20:06:35 by msakalin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	}
 	else if (to > from)
 	{
-		while (n)
-		{
-			to[n -1] = from[n - 1];
-			n--;
-		}
+		while (n--)
+			to[n] = from[n];
 	}
 	return (dest);
 }

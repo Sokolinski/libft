@@ -6,16 +6,13 @@
 /*   By: msakalin <msakalin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/05 16:28:32 by msakalin          #+#    #+#             */
-/*   Updated: 2025/10/05 16:31:08 by msakalin         ###   ########.fr       */
+/*   Updated: 2025/10/05 19:35:50 by msakalin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isdigit(int c)
 {
-	unsigned char	ch;
-
-	ch = (unsigned char) c;
-	if (ch >= '0' && ch <= '9')
+	if (c >= '0' && c <= '9')
 		return (1);
 	return (0);
 }
