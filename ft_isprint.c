@@ -1,6 +1,21 @@
-int ft_isspint(int a)
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: msakalin <msakalin@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/10/05 16:31:12 by msakalin          #+#    #+#             */
+/*   Updated: 2025/10/05 16:32:15 by msakalin         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+int	ft_isspint(int a)
 {
-    if(a > 0 && a <= 127)
-        return (a);
-    return(0);
+	unsigned char	ch;
+
+	ch = (unsigned char) a;
+	if (ch > 0 && ch <= 127)
+		return (ch);
+	return (0);
 }
