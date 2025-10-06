@@ -6,7 +6,7 @@
 /*   By: msakalin <msakalin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/05 16:44:55 by msakalin          #+#    #+#             */
-/*   Updated: 2025/10/06 16:18:25 by msakalin         ###   ########.fr       */
+/*   Updated: 2025/10/06 18:00:38 by msakalin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,6 @@ int		ft_tolower(int ch);
 int		ft_toupper(int ch);
 char	*ft_strnstr(const char *str_1, const char *str_2, size_t n);
 void	*ft_calloc(size_t nmemb, size_t size);
+char	*ft_strdup(const char *s);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
 #endif

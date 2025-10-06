@@ -4,6 +4,7 @@
 		"string.h": "c",
 		"libft.h": "c",
 		"stddef.h": "c",
-		"cstring": "c"
+		"cstring": "c",
+		"functional": "c"
 	}
 }

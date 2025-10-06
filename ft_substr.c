@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msakalin <msakalin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/04 17:06:12 by marvin            #+#    #+#             */
-/*   Updated: 2025/10/06 19:32:20 by msakalin         ###   ########.fr       */
+/*   Created: 2025/10/06 18:00:48 by msakalin          #+#    #+#             */
+/*   Updated: 2025/10/06 19:17:47 by msakalin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *p1, const void *p2, size_t n)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t			i;
-	unsigned char	*cp1;
-	unsigned char	*cp2;
+	size_t	s_len;
+	size_t	cp_len;
+	char	*result;
 
-	cp1 = (unsigned char *) p1;
-	cp2 = (unsigned char *) p2;
-	i = 0;
-	while (i < n)
-	{
-		if (cp1[i] != cp2[i])
-			return (cp1[i] - cp2[i]);
-		i++;
-	}
-	return (0);
+	s_len = ft_strlen(s);
+	if (s_len <= start || len == 0)
+		return (NULL);
+	if (s_len < start + len)
+		cp_len = s_len;
+	else
+		cp_len = len;
+	result = malloc(cp_len - start + 1);
+	if (result == NULL)
+		return (NULL);
+	ft_strlcpy(result, s + start, cp_len +1);
+	return (result);
 }
