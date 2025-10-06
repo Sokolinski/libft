@@ -6,7 +6,7 @@
 /*   By: msakalin <msakalin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 17:31:13 by msakalin          #+#    #+#             */
-/*   Updated: 2025/10/05 20:57:23 by msakalin         ###   ########.fr       */
+/*   Updated: 2025/10/06 14:19:06 by msakalin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 			cp_ln = size -1;
 		else
 			cp_ln = src_ln;
-		ft_memmove(dst,src, cp_ln);
+		ft_memmove(dst, src, cp_ln);
 		dst[cp_ln] = '\0';
 	}
 	return (src_ln);

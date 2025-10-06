@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msakalin <msakalin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/04 17:45:39 by marvin            #+#    #+#             */
-/*   Updated: 2025/10/05 16:46:17 by msakalin         ###   ########.fr       */
+/*   Created: 2025/10/06 14:22:51 by msakalin          #+#    #+#             */
+/*   Updated: 2025/10/06 14:30:55 by msakalin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*strstr(const char *str_1, const char *str_2)
+char	*ft_strnstr(const char *str_1, const char *str_2)
 {
 	size_t	i;
 	size_t	ln_str2;
@@ -35,4 +35,9 @@ char	*strstr(const char *str_1, const char *str_2)
 		i++;
 	}
 	return (NULL);
+}
+int main()
+{
+	ft_strnstr("123" ,"2");
+	return 0;
 }
