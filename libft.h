@@ -6,7 +6,7 @@
 /*   By: msakalin <msakalin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/05 16:44:55 by msakalin          #+#    #+#             */
-/*   Updated: 2025/10/07 12:49:25 by msakalin         ###   ########.fr       */
+/*   Updated: 2025/10/07 13:39:47 by msakalin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,6 @@ char	*ft_strnstr(const char *str_1, const char *str_2, size_t n);
 void	*ft_calloc(size_t nmemb, size_t size);
 char	*ft_strdup(const char *s);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	*ft_strjoin(char const *s1, char const *s2);
+
 #endif
