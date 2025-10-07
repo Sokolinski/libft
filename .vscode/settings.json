@@ -6,5 +6,8 @@
 		"stddef.h": "c",
 		"cstring": "c",
 		"functional": "c"
-	}
+	},
+	"[c]": {
+        "editor.defaultFormatter": "keyhr.42-c-format"
+    },
 }
