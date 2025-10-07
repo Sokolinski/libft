@@ -1,9 +1,22 @@
-int ft_isalnum(int c)
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: msakalin <msakalin@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/10/05 16:23:25 by msakalin          #+#    #+#             */
+/*   Updated: 2025/10/05 16:24:41 by msakalin         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+int	ft_isalnum(int c)
 {
 	unsigned char	ch;
 
-	ch =(unsigned char) c;
-    if((ch >= '0' && ch <= '9') || (ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z'))
-        return (1);
-    return (0);
+	ch = (unsigned char) c;
+	if ((ch >= '0' && ch <= '9') || (ch >= 'a' && ch <= 'z')
+		|| (ch >= 'A' && ch <= 'Z'))
+		return (1);
+	return (0);
 }

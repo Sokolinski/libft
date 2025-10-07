@@ -6,7 +6,7 @@
 /*   By: msakalin <msakalin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 17:18:00 by msakalin          #+#    #+#             */
-/*   Updated: 2025/10/01 19:10:43 by msakalin         ###   ########.fr       */
+/*   Updated: 2025/10/06 14:25:35 by msakalin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ size_t	ft_strlen(const char *c)
 
 	i = 0;
 	while (c[i])
-	{
 		i++;
-	}
 	return (i);
 }
