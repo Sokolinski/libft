@@ -20,6 +20,7 @@ size_t	start(char const *s1, char const *set)
 	size_t	flag;
 
 	flag = 0;
+	i = 0;
 	set_len = ft_strlen(set);
 	while (s1[i])
 	{
@@ -58,7 +59,7 @@ size_t	end(char const *s1, char const *set)
 			j++;
 		}
 		if (flag == set_len)
-			return (s1_len);
+			return (ft_strlen(set) - s1_len - 1);
 		flag = 0;
 		s1_len--;
 	}
@@ -73,9 +74,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	start_p = start(s1, set);
 	end_p = end(s1, set);
-	result = malloc(ft_strlen(s1) - (ft_strlen(s1) - end_p) - start_p + 1);
+	result = malloc(end_p - start_p + 2);
 	if (result == NULL)
 		return (NULL);
-	ft_strlcpy(result, s1 + start_p,ft_strlen(s1) - (ft_strlen(s1) - end_p) - start_p + 1);
+	ft_strlcpy(result, s1 + start_p,end_p - start_p + 2);
 	return (result);
 }
