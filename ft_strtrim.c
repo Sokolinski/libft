@@ -6,7 +6,7 @@
 /*   By: msakalin <msakalin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 14:45:43 by msakalin          #+#    #+#             */
-/*   Updated: 2025/10/07 18:49:20 by msakalin         ###   ########.fr       */
+/*   Updated: 2025/10/09 18:14:39 by msakalin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ size_t	start(char const *s1, char const *set)
 
 	flag = 0;
 	set_len = ft_strlen(set);
+	i = 0;
 	while (s1[i])
 	{
 		j = 0;
@@ -69,13 +70,18 @@ char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	start_p;
 	size_t	end_p;
+	size_t	size;
 	char	*result;
 
 	start_p = start(s1, set);
 	end_p = end(s1, set);
-	result = malloc(ft_strlen(s1) - (ft_strlen(s1) - end_p) - start_p + 1);
+	if (end_p == start_p)
+		size = 1;
+	else
+		size = end_p - start_p + 2;
+	result = malloc(sizeof(char) * size);
 	if (result == NULL)
 		return (NULL);
-	ft_strlcpy(result, s1 + start_p,ft_strlen(s1) - (ft_strlen(s1) - end_p) - start_p + 1);
+	ft_strlcpy(result, s1 + start_p, size);
 	return (result);
 }
