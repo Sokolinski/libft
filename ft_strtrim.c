@@ -6,13 +6,13 @@
 /*   By: msakalin <msakalin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 14:45:43 by msakalin          #+#    #+#             */
-/*   Updated: 2025/10/12 20:52:01 by msakalin         ###   ########.fr       */
+/*   Updated: 2025/10/13 19:08:36 by msakalin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	start(char const *s1, char const *set)
+static size_t	start(char const *s1, char const *set)
 {
 	size_t	set_len;
 	size_t	i;
@@ -39,7 +39,7 @@ size_t	start(char const *s1, char const *set)
 	return (0);
 }
 
-size_t	end(char const *s1, char const *set)
+static size_t	end(char const *s1, char const *set)
 {
 	size_t	set_len;
 	size_t	j;
@@ -65,7 +65,18 @@ size_t	end(char const *s1, char const *set)
 	}
 	return (s1_len);
 }
+static char	*set_null(char const *s1)
+{
+	char	*result;
+	size_t	size;
 
+	size = ft_strlen(s1) + 1;
+	result = malloc(size);
+	if (result == NULL)
+		return (NULL);
+	ft_strlcpy(result,s1,size);
+	return (result);
+}
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	start_p;
@@ -73,6 +84,13 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	size;
 	char	*result;
 
+	if (s1 == NULL)
+		return (result = NULL);
+	if (set == NULL)
+	{
+		result = set_null(s1);
+		return (result);
+	}
 	start_p = start(s1, set);
 	end_p = end(s1, set);
 	if (end_p == start_p)
