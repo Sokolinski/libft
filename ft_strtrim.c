@@ -6,7 +6,7 @@
 /*   By: msakalin <msakalin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 14:45:43 by msakalin          #+#    #+#             */
-/*   Updated: 2025/10/13 19:08:36 by msakalin         ###   ########.fr       */
+/*   Updated: 2025/10/14 18:57:03 by msakalin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ static size_t	end(char const *s1, char const *set)
 	}
 	return (s1_len);
 }
+
 static char	*set_null(char const *s1)
 {
 	char	*result;
@@ -74,9 +75,10 @@ static char	*set_null(char const *s1)
 	result = malloc(size);
 	if (result == NULL)
 		return (NULL);
-	ft_strlcpy(result,s1,size);
+	ft_strlcpy(result, s1, size);
 	return (result);
 }
+
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	start_p;

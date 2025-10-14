@@ -6,7 +6,7 @@
 /*   By: msakalin <msakalin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 13:51:33 by msakalin          #+#    #+#             */
-/*   Updated: 2025/10/13 18:48:04 by msakalin         ###   ########.fr       */
+/*   Updated: 2025/10/14 19:01:06 by msakalin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ char	*ft_itoa(int n)
 	len -= 1;
 	while (len >= 0 && res[len] != '-')
 	{
-		res[len] = (n % 10 * indicator) + '0';
+		res[len] = ((n % 10) * indicator) + '0';
 		n /= 10;
 		len--;
 	}

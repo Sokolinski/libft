@@ -6,7 +6,7 @@
 /*   By: msakalin <msakalin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 16:09:54 by msakalin          #+#    #+#             */
-/*   Updated: 2025/10/14 15:29:08 by msakalin         ###   ########.fr       */
+/*   Updated: 2025/10/14 18:56:45 by msakalin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,19 +45,14 @@ static size_t	str_len(char const *str, char sep)
 		i++;
 	return (i);
 }
+
 static void	free_split(char **res, size_t n)
 {
-	size_t i;
-	if (!res)
-		return ;
-	i = 0;
-	while (i < n)
-	{
-		free(res[i]);
-		i++;
-	}
+	while (n > 0)
+		free(res[--n]);
 	free(res);
 }
+
 static char	**arr_fill(char **res, size_t size, char sep, char const *str)
 {
 	size_t	i;
@@ -81,12 +76,14 @@ static char	**arr_fill(char **res, size_t size, char sep, char const *str)
 		cp_pos += cp_len;
 		i++;
 	}
+	res[size] = NULL;
 	return (res);
 }
+
 char	**ft_split(char const *s, char c)
 {
-	char		**result;
-	size_t		size;
+	char	**result;
+	size_t	size;
 
 	if (s == NULL)
 		return (NULL);
@@ -95,10 +92,6 @@ char	**ft_split(char const *s, char c)
 	if (!result)
 		return (NULL);
 	if (!arr_fill(result, size, c, s))
-	{
-		free(result);
 		return (NULL);
-	}
-	result[size] = NULL;
 	return (result);
 }

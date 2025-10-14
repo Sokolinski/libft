@@ -6,7 +6,7 @@
 /*   By: msakalin <msakalin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 15:39:49 by msakalin          #+#    #+#             */
-/*   Updated: 2025/10/14 15:51:25 by msakalin         ###   ########.fr       */
+/*   Updated: 2025/10/14 18:55:45 by msakalin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 	i = 0;
 	while (i < len)
 	{
-		f(i,&s[i]);
+		f(i, &s[i]);
 		i++;
 	}
 }
