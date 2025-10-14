@@ -45,6 +45,19 @@ static size_t	str_len(char const *str, char sep)
 		i++;
 	return (i);
 }
+static void	free_split(char **res, size_t n)
+{
+	size_t i;
+	if (!res)
+		return ;
+	i = 0;
+	while (i < n)
+	{
+		free(res[i]);
+		i++;
+	}
+	free(res);
+}
 static char	**arr_fill(char **res, size_t size, char sep, char const *str)
 {
 	size_t	i;
@@ -58,7 +71,12 @@ static char	**arr_fill(char **res, size_t size, char sep, char const *str)
 		while (str[cp_pos] == sep && str[cp_pos])
 			cp_pos++;
 		cp_len = str_len(str + cp_pos, sep);
-		res[i] = malloc(sizeof(char) * cp_len + 1);
+		res[i] = malloc(sizeof(char) * (cp_len + 1));
+		if (!res[i])
+		{
+			free_split(res, i);
+			return (NULL);
+		}
 		ft_strlcpy(res[i], str + cp_pos, cp_len + 1);
 		cp_pos += cp_len;
 		i++;
@@ -68,15 +86,19 @@ static char	**arr_fill(char **res, size_t size, char sep, char const *str)
 char	**ft_split(char const *s, char c)
 {
 	char		**result;
-	const char	*str;
 	size_t		size;
 
 	if (s == NULL)
-		return (result = NULL);
-	str = ft_strtrim(s, &c);
-	size = arr_size(str, c) + 1;
-	result = malloc(sizeof(char *) * (size));
-	arr_fill(result, size, c, str);
-	result[size - 1] = NULL;
+		return (NULL);
+	size = arr_size(s, c);
+	result = malloc(sizeof(char *) * (size + 1));
+	if (!result)
+		return (NULL);
+	if (!arr_fill(result, size, c, s))
+	{
+		free(result);
+		return (NULL);
+	}
+	result[size] = NULL;
 	return (result);
 }
